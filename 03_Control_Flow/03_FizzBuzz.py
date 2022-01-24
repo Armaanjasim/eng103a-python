@@ -20,8 +20,8 @@ while True:
         print("Pick an integer please")
         # If the input doesn't meet the requirements it prints the statement and then loops till it does
 
-word1 = input("Input first keyword for numbers divisible by 3")
-word2 = input("Input second keyword for numbers divisible by 5")
+word1 = input("Input first keyword for numbers divisible by 3: ")
+word2 = input("Input second keyword for numbers divisible by 5: ")
 
 for i in range(int(startNum), int(endNum)+1):
     if i % 3 == 0 and i % 5 == 0:  # Checks if the number is divisible by 3 and 5
