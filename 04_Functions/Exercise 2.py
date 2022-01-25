@@ -152,16 +152,16 @@ print("\nQ3a\n")
 # A3a:
 def check_prime_number():
     number = input_number("What number would you like to check is a prime number? ")
-    ans = "Prime"
+    answer = "Prime"
     if number:
         for i in range(2, int(number)):
             if int(number) % i == 0:
-                ans = "Not Prime"
+                answer = "Not Prime"
                 break
-    else:
+    elif not number:
         print("You need a digit please!")
         check_prime_number()
-    print(ans)
+    return answer
 
 print("\nQ3b\n")
 # Q3b: Now add some functionality to the function which does not error if the user inputs something other than a digit
@@ -176,6 +176,6 @@ def input_number(question):
         return False
 
 
-check_prime_number()
+print(check_prime_number())
 
 # -------------------------------------------------------------------------------------- #
