@@ -1,23 +1,23 @@
 # Basic Version
 
 while True:
-    startNum = input("Pick a starting number for fizzbuzz: ")
-    if startNum.isdigit() and int(startNum) > 0 and int(startNum) > 0:
+    startNum = input("Pick a starting number for fizzbuzz 1-10000: ")
+    if startNum.isdigit() and 0 < int(startNum) < 10000:
         # Check if the input is a number and greater than 0
         break
         # If the input meets the requirements it breaks from the while loop
     else:
-        print("Pick an integer please")
+        print("Pick an 'Integer' between '1-10000'")
         # If the input doesn't meet the requirements it prints the statement and then loops till it does
 
 while True:
-    endNum = input("Pick an ending number for fizzbuzz: ")
-    if endNum.isdigit() and int(endNum) > 0:
+    endNum = input("Pick an ending number for fizzbuzz 1-10000: ")
+    if endNum.isdigit() and 0 < int(endNum) < 10000:
         # Check if the input is a number and greater than 0
         break
         # If the input meets the requirements it breaks from the while loop
     else:
-        print("Pick an integer please")
+        print("Pick an 'Integer' between '1-10000'")
         # If the input doesn't meet the requirements it prints the statement and then loops till it does
 
 word1 = input("Input first keyword for numbers divisible by 3: ")  # Could use isalpha() to check input
