@@ -5,24 +5,62 @@ print("\nQ1a\n")
 
 
 # A1a:
-def integer_divisor():
-    num1 = input("Write a number that you want to know the divisors of: ")
+def integer_divisor(num1=0):
+    if num1 == 0:
+        num1 = input("Write a number that you want to know the divisors of: ")
     new_list = []
     if num1.isdigit():
         num1 = int(num1)
         for i in range(1, int(num1) + 1):
             if (num1 % i) == 0:
                 new_list.append(i)
+    else:
+        print("Select a number please!")
+        integer_divisor()
+    return new_list
 
 
+print(integer_divisor())
 
 print("\nQ1b\n")
 # Q1b: Write a function which takes in two integers as arguments and returns true if one of the numbers
 # is a factor of the other, false otherwise
 # (bonus points if you call your previous function within this function
 
-# A1b:
 
+# A1b:
+def factor_of_two_numbers():
+    factor2_is_correct = True
+    factor1 = input("Pick the first number: ")
+    if factor1.isdigit():
+        while factor2_is_correct:
+            factor2 = input("Pick the second number: ")
+            if factor2.isdigit():
+                factor2_is_correct = False
+            else:
+                print("Enter a digit for the second number please!")
+    else:
+        print("Enter a digit for the first number please!")
+        factor_of_two_numbers()
+
+    if int(factor1) == int(factor2):
+        print(True)
+        print("Factor == Factor")
+    elif int(factor1) > int(factor2):
+        list_factor = integer_divisor(factor1)
+        if int(factor2) in list_factor:
+            print(True)
+        else:
+            print(False)
+    elif int(factor1) < int(factor2):
+        list_factor = integer_divisor(factor2)
+        if int(factor1) in list_factor:
+            print(True)
+        else:
+            print(False)
+
+
+factor_of_two_numbers()
 
 
 # -------------------------------------------------------------------------------------- #
