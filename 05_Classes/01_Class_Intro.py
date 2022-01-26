@@ -15,7 +15,9 @@
 
 
 class Cat:
-    animal_kind = "Lion"
+    def __init__(self, colour):
+        self.cat_type = "Lion"
+        self.colour = colour
 
     def roar(self):
         return "Roarr!"
@@ -24,5 +26,5 @@ class Cat:
         return self.roar().upper()
 
 
-Arslan = Cat()
-print(Arslan.loud_roar())
+Arslan = Cat("Blue")
+print(Arslan.colour, Arslan.cat_type, Arslan.loud_roar())
