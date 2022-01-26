@@ -55,54 +55,32 @@ def input_number_question(question):
     Asks question to the user (Trying to be efficient)
     """
     number = input(question)
-    if check_if_input_is_number(number):
-        return number
-    else:
-        return False
+    while not check_if_input_is_number(number):
+        number = input("Please enter a digit only!\n" + question)
+    return number
 
 
 def input_keyword_question(question):
     keyword = input(question)
-    if check_if_input_is_alpha_only(keyword):  # Checks to see if there is a value for the keyword
-        return keyword
-    else:
-        return False  # Returns false if the keyword isn't alphabetical
+    while not check_if_input_is_alpha_only(keyword):  # Checks to see if there is a value for the keyword
+        keyword = input("Please enter alphabetic characters only!\n" + question)
+    return keyword
 
 
 def start_number():
-    number = input_number_question("Pick a starting number for fizzbuzz: ")
-    if number:
-        return number
-    else:
-        print("Please enter a digit!")
-        start_number()
+    return input_number_question("Pick a starting number for fizzbuzz: ")
 
 
 def end_number():
-    number = input_number_question("Pick an ending number for fizzbuzz: ")
-    if number:
-        return number
-    else:
-        print("Please enter a digit!")
-        end_number()
+    return input_number_question("Pick an ending number for fizzbuzz: ")
 
 
 def first_keyword():
-    keyword = input_keyword_question("Please enter the first keyword: ")
-    if keyword:
-        return keyword
-    else:
-        print("Please enter alphabetic characters only!")
-        first_keyword()
+    return input_keyword_question("Please enter the first keyword: ")
 
 
 def second_keyword():
-    keyword = input_keyword_question("Please enter the second keyword: ")
-    if keyword:
-        return keyword
-    else:
-        print("Please enter alphabetic characters only!")
-        second_keyword()
+    return input_keyword_question("Please enter the second keyword: ")
 
 
 main()
